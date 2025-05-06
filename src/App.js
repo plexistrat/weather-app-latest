@@ -23,22 +23,18 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Weather App</h1>
-      <input
-        type="text"
-        placeholder="Enter city name"
-        value={city}
-        onChange={(e) =>
-          setCity(
-            e.target.value.length > 0
-              ? e.target.value
-              : alert("Please enter a city name")
-          )
-        }
-      />
-      <button onClick={getWeather}>Search</button>
+      <div className="main-page">
+        <h1>Weather App</h1>
+        <input
+          type="text"
+          placeholder="Enter city name"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+        />
+        <button onClick={getWeather}>Search</button>
+      </div>
 
-      {error && <p>{error}</p>}
+      {error && <p className="error">{error}</p>}
 
       {weather && (
         <div className="weather-box">
